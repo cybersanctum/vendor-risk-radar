@@ -1,8 +1,8 @@
-# vendor-radar
+# vendor-risk-radar
 
 **Third-party breach monitoring from public security news feeds, piped to your SIEM.**
 
-When a vendor you depend on gets breached, the news often hits security blogs and advisories hours or days before the vendor emails you. vendor-radar watches those feeds, flags any article that mentions a vendor on your watchlist, and writes the hits to a CSV your SIEM can ingest and alert on.
+When a vendor you depend on gets breached, the news often hits security blogs and advisories hours or days before the vendor emails you. vendor-risk-radar watches those feeds, flags any article that mentions a vendor on your watchlist, and writes the hits to a CSV your SIEM can ingest and alert on.
 
 ## How it works
 
@@ -22,8 +22,8 @@ Matching is case-insensitive and uses word boundaries, so `Zoom` matches "Zoom p
 Requires Python 3.8+.
 
 ```bash
-git clone https://github.com/<your-username>/vendor-radar.git
-cd vendor-radar
+git clone https://github.com/cybersanctum/vendor-risk-radar.git
+cd vendor-risk-radar
 python -m venv .venv
 # Windows:      .venv\Scripts\activate
 # macOS/Linux:  source .venv/bin/activate
@@ -86,17 +86,17 @@ Any RSS or Atom feed works. `name` is shown in the console output.
 Point your SIEM's file monitor or forwarder at `risk_feed.csv`. For example, a Splunk Universal Forwarder `inputs.conf` stanza:
 
 ```ini
-[monitor://C:\path\to\vendor-radar\risk_feed.csv]
+[monitor://C:\path\to\vendor-risk-radar\risk_feed.csv]
 sourcetype = csv
 index = threat_intel
 ```
 
 ## Running on a schedule
 
-- **Windows:** Task Scheduler → Create Basic Task → run `C:\path\to\vendor-radar\.venv\Scripts\python.exe` with argument `C:\path\to\vendor-radar\riskfeed.py`.
+- **Windows:** Task Scheduler → Create Basic Task → run `C:\path\to\vendor-risk-radar\.venv\Scripts\python.exe` with argument `C:\path\to\vendor-risk-radar\riskfeed.py`.
 - **macOS/Linux (cron, hourly):**
   ```
-  0 * * * * /path/to/vendor-radar/.venv/bin/python /path/to/vendor-radar/riskfeed.py
+  0 * * * * /path/to/vendor-risk-radar/.venv/bin/python /path/to/vendor-risk-radar/riskfeed.py
   ```
 
 The script finds its config files relative to its own location, so it can be run from any working directory.
