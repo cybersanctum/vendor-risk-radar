@@ -1,0 +1,12 @@
+# RSS/Atom feeds to poll. Name is used as the "source" column in the CSV.
+feeds:
+  - name: BleepingComputer
+    url: https://www.bleepingcomputer.com/feed/
+  - name: The Hacker News
+    url: https://feeds.feedburner.com/TheHackersNews
+  - name: CISA Advisories
+    url: https://www.cisa.gov/cybersecurity-advisories/all.xml
+  - name: Krebs on Security
+    url: https://krebsonsecurity.com/feed/
+  - name: SecurityWeek
+    url: https://www.securityweek.com/feed/
