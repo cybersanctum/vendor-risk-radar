@@ -1,0 +1,15 @@
+# Output (contains collected data, not source)
+risk_feed.csv
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
