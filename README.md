@@ -4,6 +4,14 @@
 
 When a vendor you depend on gets breached, the news often hits security blogs and advisories hours or days before the vendor emails you. vendor-risk-radar watches those feeds, flags any article that mentions a vendor on your watchlist, and writes the hits to a CSV your SIEM can ingest and alert on.
 
+## Why use this
+
+Commercial third-party risk and threat intelligence platforms can cost thousands of dollars a year, and much of what they surface about vendor breaches starts as public reporting. vendor-radar covers that early-warning piece for free: it watches the same public security news and advisories, flags mentions of the vendors you rely on, and feeds them straight into the SIEM you already run. It doesn't replace a full TPRM program (questionnaires, security ratings, contract reviews), but it gives smaller teams breach awareness without another license, and gives larger teams a cheap second source to check paid feeds against.
+
+## Extending it
+
+Both lists are plain YAML, so no code changes are needed. To watch a new vendor, add a `- name:` entry to `config/watchlist.yaml`, with `aliases` for its product names and `exclude` for phrases that cause false hits. To add a source, add any RSS or Atom feed URL to `config/feeds.yaml`, such as vendor security blogs, CERT advisories, or your industry's ISAC. Changes take effect on the next run.
+
 ## How it works
 
 ```
