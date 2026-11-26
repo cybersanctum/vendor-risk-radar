@@ -1,0 +1,15 @@
+# Vendors your organization depends on. Replace this example list with your own.
+#
+#   name:    the vendor name written to the CSV "vendor" column
+#   aliases: product or brand names that should also count as this vendor
+#   exclude: phrases that contain the name but aren't about the vendor
+vendors:
+  - name: Microsoft
+    aliases: [Azure, Entra, Exchange Online, Microsoft 365, M365]
+  - name: Google
+    aliases: [Google Workspace, Chrome, Android]
+  - name: Cisco
+  - name: Fortinet
+    aliases: [FortiGate, FortiOS]
+  - name: Zoom
+    exclude: [zoom in, zoom out]
