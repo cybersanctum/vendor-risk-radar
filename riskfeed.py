@@ -7,7 +7,6 @@ import html
 import re
 import socket
 from pathlib import Path
-
 import feedparser
 import yaml
 
